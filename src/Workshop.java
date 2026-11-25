@@ -13,8 +13,10 @@ void main() {
         case 22 -> 7.5;
         case 53 -> 3.5;
         case 80 -> 4.0;
+        case 123 -> 3.0;
         case 443 -> 2.0;
         case 3389 -> 9.0;
+        case 8080 -> 6.0;
         default -> 5.0;
     };
 
@@ -24,13 +26,13 @@ void main() {
         // 3. TCP
         if (porti == 80 || porti == 443) {
             lejohet = true;
-        } else if (porti == 22) {
+        } else if (porti == 22 || porti == 8080) {
             String pergjigja = IO.readln("Nga rrjeti i brendshëm? (po/jo): ").strip().toLowerCase();
             lejohet = pergjigja.equals("po");
         }
     } else if (protokolli.equals("UDP")) {
         // 4. UDP
-        lejohet = (porti == 53);
+        lejohet = (porti == 53 || porti == 123);
     } else {
         IO.println("Protokoll i panjohur.");
     }

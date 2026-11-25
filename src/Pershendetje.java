@@ -4,7 +4,6 @@ void main() {
 
     int age = 20;
     long length = age;
-    double length = age;
     double price = 9.99;
     int euro = (int) price;
 
